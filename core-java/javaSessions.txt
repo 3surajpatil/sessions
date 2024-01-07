@@ -1,0 +1,408 @@
+
+
+
+https://notepad-plus-plus.org/downloads/v8.6/
+
+
+task 1:- write a program for printing below pattern 
+===================================================================
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+
+
+tsk 2 :- write a pogram to print below pattern.
+===================================================================
+*****
+****
+***
+**
+*
+
+
+tsk 3 :- write a pogram to print below pattern.
+===================================================================
+
+     *
+    * *
+   * * *
+  * * * *
+ * * * * *
+ 
+-----*
+----* *
+---* * *
+--* * * *
+-* * * * *
+ 
+     *
+    * *
+   * * *
+  * * * *
+ * * * * *	 
+
+tsk 4 :- write a pogram to print below pattern.
+===================================================================
+
+     *
+    * *
+   * * *
+  * * * *
+ * * * * *
+  * * * *
+   * * *
+    * *
+     *
+	 	 
+task 5 :- write a program to calculate Sum  / write a program for sum functionality of a calculator.
+======================================================================================================================================
+package test;
+
+public class Calculator {
+	
+	 public int sum(int input1, int input2)
+	 {
+		 int result=0;
+		 
+		 result=input1+input2;
+		 
+		return result; 
+	 }
+	 	
+	public static void main(String[] args) {
+		
+		int input1=10;
+		int input2=20;
+		int result=0;
+		
+		Calculator cal=new Calculator();
+		result=cal.sum(input1, input2);
+		
+		
+		System.out.println("sum is :="+result  );
+		
+	}
+
+}
+
+
+Task 6 :- while loop demo.
+===================================================================
+package patterns;
+
+public class WhileLoopDemo {
+
+	public static void main(String[] args) {
+		
+		int i=0;
+		int j=5;
+		
+		while(j>=0)
+		{
+			i=0;
+				while(i<=j)
+				{
+					System.out.print("*");
+					i++;
+				}
+			
+			j--;	
+			System.out.println();
+				
+		}
+
+	}
+}
+
+
+Task 7 :-  User Input demo.
+===================================================================
+package executor;
+
+import java.util.Scanner;
+
+import patterns.PrintStarPattern;
+
+public class PatternExecutor {
+
+	public static void main(String[] args) {
+		
+		int constantUserInput=10;
+		
+		System.out.println("Please enter input :- ");
+		Scanner sc= new Scanner(System.in);
+		
+		int userInput = sc.nextInt();
+		
+		PrintStarPattern psp=new PrintStarPattern(); // Object Creation.	
+		psp.print(5);   // Method Call.
+		
+		System.out.println("----------------------------------------------");
+		
+		psp.print(constantUserInput);
+		
+		System.out.println("----------------------------------------------");
+		psp.print(userInput);
+		
+	}
+
+}
+
+
+package patterns;
+
+public class PrintStarPattern {
+
+	int patternLevel;
+	
+	
+	
+	/*
+	line 13 to 16 :- Method Defination..
+	line 14:- Method Heading.
+	
+	Method heading contains Method name, return type , access modifier, and input parameters.
+	*/
+	
+	public void print(int userInput)      // Method Heading.
+	{
+		
+		System.out.println("user input is:- "+userInput);
+		
+		
+		for(int j=userInput; j>=0;j--)
+		{	
+			for(int i=1;i<=j;i++)
+			{
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+		
+		
+	}	
+	
+	
+}
+
+
+
+Task 8 :-  Constructors, constructor and method overloading.
+===================================================================
+package calc;
+
+public class Calculator {
+
+	int a,b,result; // data member.
+	
+	public Calculator()
+	{
+		//constructors are used to assign default values to data members(variables.).
+		
+		System.out.println("I am in default constructor....");
+		a=10;
+		b=20;
+		result=0;
+	}
+	
+	public Calculator(int input1, int input2)
+	{
+		System.out.println("I am in parameterized constructor....");
+		a=input1;
+		b=input2;
+		result=0;
+	}
+	
+	public void sum()
+	{
+		result=a+b;
+	}
+	
+	
+	public void sum(int input1, int input2) // overloaded method.
+	{
+		//in method overloading:- in same class , method name will be same, method parameters could be different. and return type also could be different.
+		result=input1+input2;
+		System.out.println("input1:-"+input1+" input2:-"+input2+" result:-"+result);
+	}
+	
+	
+	public void printOutput() // method
+	{
+		System.out.println("value of a := "+a+" value of b:="+b+" result:-"+result);
+	}
+	
+}
+
+
+package executor;
+
+import calc.Calculator;
+
+public class ConstructorDemo1 {
+
+	public static void main(String[] args) {
+		
+		Calculator cal=new Calculator();
+
+		cal.printOutput();
+		cal.sum();
+		cal.printOutput();
+		cal.sum(5, 4);
+		//cal.sum(5,4.2);
+		
+		Calculator cal1=new Calculator(11,22);
+		cal1.sum();
+		cal1.printOutput();
+	}
+
+}
+
+
+
+Q) What is Class ?
+--> Class is a collection of Data Members and Member Methods.
+
+Q) What is Object ?
+--> Object represents one instance of a class.
+--> Object is one instance of a class.
+
+
+Q) What is Constructor ?
+--> Constructors are used to assign default values to data members of same class.
+
+Q)What is Data Member in a class ?
+--> Data Member is a variable declared at class level.
+
+Q) What are OOPS Concepts.
+--> 
+
+
+
+
+
+
+
+Task 9 :- Homework.
+===================================================================
+
+create a class named Vehicle which should me having details of number, ownername, color, company, model;
+create default and all parameterized constructor.
+
+
+
+
+
+Task 10 :-  Swapping Values, Swapping Values without using 3rd variable.
+===================================================================================
+
+
+
+swapping values
+--------------------------------------------
+
+package interviewtasks;
+
+public class SwappingValues {
+
+	public static void main(String[] args) {
+	
+		int n1= 10;
+		int n2= 20;
+		
+		int temp=0;
+		
+		System.out.println("before swapping n1:="+n1+" n2:="+n2);
+		
+		temp=n1;
+		n1=n2;
+		n2=temp;
+		
+		System.out.println("after swapping  n1:="+n1+" n2:="+n2);
+		
+		
+
+	}
+
+}
+
+
+Swapping values without using 3rd variable.
+----------------------------------------------------
+
+package interviewtasks;
+
+public class SwappingWithourUsingThirdVariable {
+
+	public static void main(String[] args) {
+		
+		int n1= 10;
+		int n2= 20;
+		
+		System.out.println("before swapping n1:="+n1+" n2:="+n2);
+		
+		n1=n2+n1;   //n1=30 
+		n2=n1-n2;   // n2=10
+		n1=n1-n2;
+		
+		System.out.println("after swapping  n1:="+n1+" n2:="+n2);
+				
+	}
+
+}
+
+
+
+fibonacci Series
+-----------------------------------------
+
+package interviewtasks;
+
+public class FibonacciSeries {
+
+	public static void main(String[] args) {
+		
+		
+		// 0 1 1 2 3 5 8 13;
+		
+		
+		int num1=0;    //   0   1    1
+		int num2=1;		//  1    1    
+		
+		int fibSeries=0;  //  1  2
+		
+		System.out.print(num1+" "+num2);
+		
+		for(int i=0;i<=50;i++)
+		{
+			 fibSeries = num1 + num2;  
+			 num1=num2;
+			 num2=fibSeries;
+			
+			 System.out.print(" "+fibSeries);			 
+		}		
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
