@@ -6,6 +6,8 @@ public class Student {
 	String name;
 	String std;
 	
+	final static double pi=3.14;
+	
 	
 	
 	public Student()

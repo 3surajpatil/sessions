@@ -7,6 +7,10 @@ public class StudentConstructorDemo2 {
 	public static void main(String[] args) {
 		
 		
+		
+		
+		
+		
 		Student s1=new Student();
 		
 		Student s2 = new Student(1,"Shweta","2");

@@ -1,0 +1,56 @@
+
+
+
+
+Q) what is JVM
+
+Q) What is Class ?
+--> Class is a collection of Data Members and Member Methods.
+
+Q) What is Object ?
+--> Object represents one instance of a class.
+--> Object is one instance of a class.
+
+
+Q) What is Constructor ?
+--> Constructors are used to assign default values to data members of same class.
+
+Q)What is Data Member in a class ?
+--> Data Member is a variable declared at class level.
+
+Q) what is this ?
+Q) What are OOPS Concepts.
+Q) what are methods in Object class.
+Q) how to make hashmap concurrent.
+Q) when to use float and when to use double?
+Q) What datatype you will use to store a mobile no.
+
+Q) what is stack overflow error ?
+--> when methods are calling each other , and calls are in loop then stack memory gets full . hence we get stack overflow error...
+
+
+Q) can you explain System.out.println()
+
+Q) java8 features...
+
+Q) why java is not pure object oriented programming language. 
+Q) what is use of Object Data types , when java is supporting primitive datatypes.
+
+Q) if you don't want to allow your class to be extended by some other class , then what can you do ?
+ 
+Q) What is base class of all classes in java ?
+----> Object is base class of all classes in java..
+
+
+Q)how will you secure your java class data members ? 
+---> using different access modifiers/ access specifiers. private, protected. 
+	
+Q) what is difference between abstract class and interface? 
+
+Q) Why Strings are immutable in java ?
+
+Q) what type of exception's you are aware of ?  or what are all the exceptions that you came across... ?
+
+
+
+

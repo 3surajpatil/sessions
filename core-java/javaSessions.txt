@@ -395,6 +395,845 @@ public class FibonacciSeries {
 }
 
 
+Task 11 :-  Swapping Values, Swapping Values without using 3rd variable.
+===================================================================================
+
+
+
+
+Task 12 :-  how would you represent a laptop / computer in java to represent Company name, model, processor, display size, price etc.
+===================================================================================
+
+
+Task 13 :-  inheritance demo..
+===================================================================================
+
+//package base;
+package base;
+
+public class A {
+
+	
+		int i;
+
+		public A()
+		{
+			System.out.println("i am in default constructor of A class....");
+			i=100;
+			
+		}
+		
+		
+		public A(int input_i)
+		{
+			System.out.println("i am in single param constructor of A Class....");
+			this.i=input_i;
+		}
+		
+		public int getI() {
+			return i;
+		}
+
+		public void setI(int i) {
+			this.i = i;
+		}
+		
+		
+	
+}
+//package derived;
+package derived;
+
+import base.A;
+
+public class B extends A {
+	
+	int j;
+
+	
+	public B()
+	{
+		super(10);
+		System.out.println("i am in Default constructor of B class....");
+		j=200;
+		
+	}
+	
+	public B(int j)
+	{
+		super(1000);
+		System.out.println("i am in single parma constuctor of B Class....");
+		this.j=j;
+		
+		
+	}
+	
+	public int getJ() {
+		return j;
+	}
+
+	public void setJ(int j) {
+		this.j = j;
+	}
+	
+
+}
+
+
+/package executor;
+package executor;
+
+import derived.B;
+
+public class InheritanceDemo1 {
+
+	public static void main(String[] args) {
+		
+
+			B b=new B();
+			B b1=new B(20);
+			
+			
+			System.out.println(b.getI()+" "+b.getJ());
+		
+	}
+
+}
+
+
+
+
+Q) what are methods in Object class.
+
+
+
+Task 14 :-  StaticDemo..
+===================================================================================
+
+package products;
+
+public class Product {
+
+	
+	// instance data members. instance is nothing but an object.
+	// instance variables will be initialized at time of creating an object of a class. or calling new ClassName();
+	float price;
+	int quantity;	
+	String productName,seller,warrenty;
+	
+	
+	
+	// static values are for storing fix information which could be accessible without creating an object.
+	// these are initilized at time of loading class in jvm.
+	public static String deliveryTime="3days";
+	
+	
+	
+	
+	public Product()
+	{
+		productName = "iphone 14";
+		price = 150000.50f;
+		seller = "Some Mobile Store";
+		warrenty = "1 year ";
+		quantity = 500;
+	}
+
+	public Product(float price, int quantity, String productName, String seller, String warrenty) {
+		super();
+		this.price = price;
+		this.quantity = quantity;
+		this.productName = productName;
+		this.seller = seller;
+		this.warrenty = warrenty;
+	}
+
+//generate getter and setter methods here..............
+//generate getter and setter methods here..............
+//generate getter and setter methods here..............
+
+
+// generate toString method here...........
+
+
+}
+
+
+
+package executor;
+
+import products.Product;
+
+public class ProductExecutor {
+
+	public static void main(String[] args) {
+		
+
+			
+		String info=Product.deliveryTime;
+		String info1= Product.getDeliveryTime();
+		
+		System.out.println(info);
+		System.out.println(info1);
+		
+		
+
+		Product p1;   // declare an object of a Product class.
+		p1=new Product();  // here we initialized / created object.
+		p1.getPrice();
+		
+		p1.getDeliveryTime();  // we can call static method w.r.t.object of a class.
+		
+		//Product.getProductName() // we cannot call like this.
+		
+	}
+
+}
+
+
+
+Task 15 :-  Static Data Members Calling..
+===================================================================================
+
+
+package executor;
+
+public class StaticDataMembersCalling {
+
+	public String info="welcome to java world :- instance variable...!";
+	
+	public static String info1="welcome to java world :- static variable...!";
+	
+	
+	public static void main(String[] args) {
+		
+		B();
+		
+		
+		StaticDataMembersCalling sdmc=new StaticDataMembersCalling();
+		sdmc.A();
+		
+		
+		
+	}
+
+	public void A()
+	{
+		System.out.println("------------------i am in instance A() method....----------------------------");
+		// instance variable call be called directly without obect if they belong to same class..
+		System.out.println("info:- "+info);
+		// static variable can also be called directly without object if they belong to same class. from instance mthod context.
+		System.out.println("info1:-"+info1);
+	
+	}
+	
+	public static void B()
+	{
+		System.out.println("------------------i am in static B() method....----------------------------");
+		// instance variable cannot be called directly from context of a static method. provided both method and variable belong to same class.
+		//System.out.println("info"+info);    // uncomment this line before running first time..//
+		
+		//static variable can be called directly from context of static method. provided both method and variable belong to same class.
+		System.out.println("info1"+info1);
+		
+	}
+	
+	
+	
+	
+}
+
+
+
+Task 16 :-  Static Methods Calling..
+===================================================================================
+package executor;
+
+import products.Product;
+
+public class StaticMethodCalling {
+
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+	
+		
+		//Scenario 1.....
+		//one static method can call other static method directly provided both are in same class.. 
+		// i.e. we don't need object to call methods in same class.
+		A();
+		//B();
+		//we cannot call instance method of SameClass from static method...		
+		//C();
+		//D();
+		//instance method of SameClass can be called w.r.t. SameClass Object.
+		StaticMethodCalling smc=new StaticMethodCalling();
+		smc.C();
+		
+		//static method of OtherClass can be called w.r.t. ClassName.methodName()
+		String deliveryTime=Product.getDeliveryTime();
+		
+		//static method of OtherClass can be called w.r.t. Other Class Object.
+		
+		Product p=new Product();
+		System.out.println(p.getProductName());
+			
+		
+		
+	}
+
+	public static void A()
+	{
+		B();
+		System.out.println("i am in A method...");
+	}
+	
+	public static void B()
+	{
+	
+		System.out.println("i am in B method....");
+	}
+	
+	
+	public void C()
+	{
+		D();
+	 System.out.println("i am in C method.....");	
+	}
+	
+	public void D()
+	{
+	 System.out.println("i am in D method.....");	
+	}
+	
+}
+
+
+
+
+
+OOPS Concepts
+==============================
+
+1) Abstraction :- Hiding the complex implementation details and providing interface(interface here is general english term .) to access functionality is Abstraction. e.g. phone call. Opening a bank Account.
+or 
+
+Hiding data  members with Private keyword from outside world. and only allowing them to access by using getter and setter methods is abstraction. here getter and setter method act as an interface.
+e.g. starting a car , operating a bank account...
+
+2) Encapsulation  :- Binding Data Members and Member Methods in single unit is called Encapsulation. Class is Result of Encapsulaiton.
+
+
+3) Polymorphism   :- Static Polymorphism and Dynamic Polymorphism
+poly means:- many
+Representing one thing in many forms is Polymorphism.
+
+Method overloading :- same method with same name and different signature in same class is method overloading.
+Method overriding :-  same method with same name and different signature in derived class is method overriding.
+
+Method overloading is example of Static Plymorphism. in method overloading, methods are bound with object at compile time.
+Method Overriding is example of Dynamic Polymorphism. in method overriding,  methods are bound with object at run time. 
+
+4) Inheritance    :- 
+
+allowing access to data members and member methods in sub class  or extended class is called as inheritance. java supports Single, Multi Level,Hirarchial inheritance.
+Multiple inheritance is not supported in java in terms of class.
+
+
+or allowing access to data members and member methods in other class without creating its object is called as inheritance.
+
+
+
+
+Task 16 :-  Method Overloading  and Overriding  and Inheritance and Polymorphism...
+===================================================================================
+
+package base;
+
+public class BaseClass {
+
+	public void sum(int i, int j)
+	{
+		System.out.println("int value sum in base class is "+i+j);
+	}
+	
+	// overloaded method...
+	
+	public void sum(float i, float j)
+	{
+		System.out.println("sum is "+i+j);
+	}
+	
+	
+}
+
+package derived;
+
+import base.BaseClass;
+
+public class DerivedClass extends BaseClass{
+
+	
+	@Override
+	public void sum(int i, int j)
+	{
+		// sice derived class cannot call base class orignal method w.r.t. object , we can call orignal method with help  of super.methodname.
+		  
+		 System.out.println("int value sum in derived class...===================>"+(i+j)) ;
+		 super.sum(i,j);
+		
+	}
+	
+	
+	public void sum(double i, double j)
+	{
+		System.out.println("double value sum is := "+(i+j));
+	}	
+}
+
+package executor;
+
+import derived.DerivedClass;
+
+public class OverloadingOverridingExecutor {
+
+	public static void main(String[] args) {
+		
+		
+		
+		DerivedClass dc=new DerivedClass();
+		
+		dc.sum(1.1, 1.1);
+		dc.sum(2.2f, 2.2f);
+		
+		dc.sum(0, 0);
+
+	}
+
+}
+
+
+
+
+
+Task 17 :-  primitive datatypes vs Object data types ?
+===================================================================================
+
+
+byte, int ,long, float , double , boolean, char,  ----> Premitive Datatypes...
+
+
+
+Q)is java pure object oriented language ? 
+--> NO, because java supports primitive datatypes. hence java is not pure object oriented programing lang.
+we can make use of Object datatypes and make 100% object oriented programming using java.
+
+
+
+Integer, Long , Float, Double, Boolean, Char
+
+non primitive data types should be preffered, because we will be able to use mehtods present in Object datatypes classes. and perform operation on data.
+
+
+Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java (except for String).
+Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.
+A primitive type has always a value, while non-primitive types can be null.
+
+
+Immutability: Primitive data types are immutable, meaning their values cannot be changed once assigned. When you modify a variable of a primitive type, you are creating a new value.
+
+
+
+Task 18 :-  Abstract Class Demo. ?
+===================================================================================
+
+
+//Concrete class structure example.
+
+class SomeClassName
+{
+
+	instance variables;
+	static variables;
+	
+	final instance variables;
+	final static variables  
+	
+	
+	constructors();
+	
+	
+	instance methods();
+	static methods();
+	
+
+}
+
+/* 
+
+------------------------------
+Abstract Class....
+------------------------------
+
+--> what is concrete class ?--->  Concrete class is class with all defined methods...or having every method implemented..
+
+---> Abstract class should contain zero or more abstract method.....
+ abstract class is a class that contain zero or more abstract method.
+
+---> Abstract method is undefined method.... or method with only method heading and doesen't have mehtod body is abstract mehod.
+or we have to declare such methods abstract that are not having body....
+
+---> abstract methods are supposed to be implementd by someone who is extending that abstract class....
+
+---> derived class of abstract class is implementaiton class of abstract class..
+
+*/
+
+// abstract class structure example...
+abstract class SomeAbstractClassName
+{
+	  //abstract method...
+	public abstract String method1();
+	
+	//abstract method..
+	public abstract void method2();
+
+	
+	
+	//implemented method.... or non abstract method...
+	public void method3()
+	{
+	
+	}
+	
+}
+
+
+class DerivedClass extends SomeAbstractClassName // 
+{
+
+	public String mehod1()
+	{
+		some operations...
+		
+		return string-value;
+		
+	}
+	
+}
+
+
+
+Task 18
+-------------
+package base;
+public abstract class Shape {
+
+	 public abstract void draw();
+	
+}
+
+
+package shapeimplementations;
+
+import base.Shape;
+
+public class Triangle extends Shape{
+
+	@Override
+	public void draw() {
+		
+		System.out.println("i am drawing Tringle...");
+	}	
+}
+
+
+package shapeimplementations;
+
+import base.Shape;
+
+public class Triangle extends Shape{
+
+	@Override
+	public void draw() {
+		
+		System.out.println("i am drawing Tringle...");
+	}
+}
+
+
+package shapeimplementations;
+
+import base.Shape;
+
+public class Circle extends Shape {
+
+	@Override
+	public void draw() {
+		
+		System.out.println("i am drawing Circle....");
+	}
+}
+
+package shapeexecutor;
+
+import base.Shape;
+import shapeimplementations.Circle;
+import shapeimplementations.Triangle;
+
+public class ShapeExecutor {
+
+	public static void main(String[] args) {
+		
+		// we cannot create object of Shape class because it is Abstract class..
+		//Shape shape=new Shape();
+		Shape s;
+		
+		s= new Triangle();	
+		s.draw();
+		
+		s= new Circle();
+		s.draw();
+		
+		
+		Triangle t1 =new Triangle();
+		t1.draw();
+		Circle c1=new Circle();
+		c1.draw();
+	}
+
+}
+
+
+class ClassName
+{
+
+}
+
+------------------------------
+Interface Class....
+------------------------------
+
+Interface :- is collection of public static final data members and abstract methods only.
+Abstract class :- contains zero or more abstract methods and data members.
+
+interface InterfaceName   
+{
+
+		// interface have only public static final variables.
+		public static final double pi=3.14; 
+		int i;
+		
+		
+		public void draw();
+		public String print();
+		// interface doesn't have constuctors...
+}
+
+
+InterfaceName in =new InterfaceName();    -----> this is incorrect .. not allowed..
+
+
+
+interface is supposed to be participating in inheritance...
+
+class ImplementationClass implements InterfaceName
+{
+
+		public void draw();
+		{
+				.....
+		}
+		
+		public String print()
+		{
+			......
+		}
+
+}
+
+
+
+
+
+
+interface 
+	|
+	|
+abstract class
+	|
+	|
+  class ---> implementation provided by all db software vendors.....
+
+
+
+Q) What is base class of all classes in java ?
+----> Object is base class of all classes in java..
+
+Q) What are Structured DB's you know ?
+-->MySQL, Oracle, SqlServer H2 db,PostgreSQL
+
+
+
+Java ---> JDBC(API)[Contains interfaces and Abstract classes...]
+
+mysql --> implementation of jdbc ---> mysql-connector-jar
+oracle ----> implementation of jdbc  ---> Ojdbc.jar
+
+
+
+what is jar ----> java archive...
+--> when we want to share our code / implemnetation code , we export our application as jar file.
+
+iterators.co.in
+
+
+
+
+
+in.co.iterators.vehicle
+in.co.iterators.executor
+com.mysql.jdbc.driver
+
+
+Task 19
+-------------
+
+package interviewtasks;
+
+public class StringOutputTracing {
+
+	public static void main(String[] args) {
+		
+
+		
+		String str="hello";
+		String str1="hello";
+		
+		String helloString=new String("hello");
+		String helloString1=new String("hello");
+		
+
+		System.out.println(str==str1);  // --> true  // compares address in ==......
+		
+		System.out.println(str==helloString);  // --> false // compares address. in ==
+		
+		System.out.println(str.equals(str1));  // --> true  // compares content
+		
+		System.out.println(str.equals(helloString)); //   true		// compares content
+	
+		System.out.println(helloString==helloString1);   // -----> false // compares address
+		
+		System.out.println(helloString.equals(helloString1));  // ---> true // compares content.
+		
+		
+		
+	}
+
+}
+
+
+
+
+
+Task 19  :- String Operations
+---------------------------------
+
+package interviewtasks;
+
+public class StringOperations {
+
+	public static void main(String[] args) {
+		
+		
+		String name="Vijay Dinanath Chouhan";
+		
+		System.out.println("String Length:- "+name.length());
+		System.out.println("7 th character is :- "+name.charAt(6));
+		
+		System.out.println("Dina index is "+name.indexOf("Dina"));
+		System.out.println("first i index is :- "+name.indexOf('i'));
+		System.out.println("Last i Position is :- "+name.lastIndexOf('i'));
+		
+		System.out.println("firsti position(index) is "+name.indexOf("i"));
+		System.out.println("Last i position is :-"+name.lastIndexOf("i"));
+		
+		System.out.println("a is replaced by b:- "+ name.replace('a', 'b'));
+		System.out.println("a is replaced by b:- "+ name.replace("ij", "jk"));
+		System.out.println("All a is replaced by b:- "+name.replaceAll("a", "b"));
+		
+		System.out.println("UpperCase "+name.toUpperCase());
+		System.out.println("LowerCase "+name.toLowerCase());
+		System.out.println("starts with Vijay:- "+name.startsWith("Vijay"));
+		System.out.println("ends with han:- "+name.endsWith("han"));
+		
+		
+		System.out.println("Sustring is :-"+name.substring(7));
+		System.out.println("Sustring is :-"+name.substring(name.lastIndexOf('i')));
+		
+		
+		System.out.println(name.concat("  gaon :- Mandva") );
+		System.out.println(name+"  gaon :- Mandva");
+	}
+
+}
+
+
+
+Task 20 :- String reverse
+---------------------------------
+
+
+
+package interviewtasks;
+
+public class StringReverseDemo {
+
+	public static void main(String[] args) {
+	
+		
+		String name="Vijay Dinanath Chouhan";
+		
+		String reversedName="";
+				
+		int nameLength=name.length()-1;
+				
+		System.out.println("name length is "+nameLength);
+
+		for(int i=nameLength; i>=0;i--)
+		{		
+			System.out.println(name.charAt(i) );
+			reversedName= reversedName+name.charAt(i);
+		}
+					
+		System.out.println("reversed Name is "+reversedName);
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
