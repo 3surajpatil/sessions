@@ -51,6 +51,40 @@ Q) Why Strings are immutable in java ?
 
 Q) what type of exception's you are aware of ?  or what are all the exceptions that you came across... ?
 
+Q) What is internal working or Exception? how Exception occur in java. or can you explain exception mechanism...
+
+Q) what is difference between length and length()  ?
+
+
+Q) what is type casting.
+
+Q) what is use of String args[] in main method ?
+
+Q) is ArrayList Synchronized ? if not how to mak eit synchronized ?
+
+List list = Collections.synchronizedList(new ArrayList(...));
+
+
+Q) what is difference between Iterable and Iterator ?
+Q) what is difference bwtween Iterator and ListIterator ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

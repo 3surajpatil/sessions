@@ -1219,6 +1219,346 @@ public class StringReverseDemo {
 
 
 
+Task 21 :- UserDefined Exception
+---------------------------------
+
+
+Exception
+{
+String message;
+
+public Exception( String message)
+{
+	this.message=message;
+}
+
+}
+
+nameArray=[0|1|2|3]
+
+String nameArray []={'suraj','shweta','pratiksha','tanu'}
+
+
+nameArray[4];
+
+
+
+
+InvalidInputException  -----> Exception 
+NumberFomatException   -----> Exception
+ArrayIndexOutOfBoundException  -----> Exception
+StringIndexOutOfBoundException ------> Exception
+
+Exception e;
+
+
+e = new InvalidInputException("message....");
+
+e = new NumberFomatException("message....1");
+
+e = new ArrayIndexOutOfBoundException("message....1")
+
+e = new StringIndexOutOfBoundException("message....1")
+
+
+Task 22 :- throwing exception.
+----------------------------------
+
+package exceptiondemos;
+
+import java.util.Optional;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class ExceptionDemo1 {
+
+	public static void main(String[] args) {
+	
+		int x=0;
+		System.out.println("Please enter number :- ");
+		Scanner sc= new Scanner(System.in);
+		
+		String input= sc.next();
+					
+		 try {
+		   
+			boolean isValidUserInput=isValidInt(input);
+			
+			
+			// if exception is thrown by isValidInt method, below code in this try block will not be executed.
+			 if(  isValidUserInput)
+			 {
+				   x = Integer.parseInt(input);
+				 
+			 }
+			  
+			 System.out.println("aaaa");
+			 System.out.println("bbbbbb");
+			 
+			 
+		 }
+		 catch(Exception e) {    //  catch(InvalidInputException e) {
+		 
+			 System.out.println( e.getMessage() );
+			
+				 
+		 } 	
+		 finally
+		 {
+			 
+			 // this block gets executed compulsory irrespective of  exception is thrown or not..
+			 sc.close();
+		 }
+			
+	}
+
+		
+	 public static boolean isValidInt(String input) throws InvalidInputException
+	 {
+		 
+		 
+		 boolean validInt=false;
+		 Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
+		 
+		 
+		 input=input.trim();
+		  
+		 System.out.println("Entered input is "+input);
+		 
+		 if(input == null)
+		 {
+			 return validInt;
+		 }	 
+		 else if(input.length()==0)
+		 {
+			 return validInt;
+		 }
+		 else if(  ! pattern.matcher(input).matches())
+		 {
+			 
+			 //throws exception.
+			throw new InvalidInputException("please enter valid integer....!");
+						 
+		 }
+		 else
+		 {
+			 validInt=true;
+		 }
+		 
+		 
+		 
+		 return validInt;
+	 }
+	
+}
+
+
+
+package exceptiondemos;
+
+public class InvalidInputException extends Exception{
+	
+	
+
+	public InvalidInputException(String message)
+	{	
+		super(message);
+	}
+	
+}
+
+
+Arrays
+---------------------------------------------------------------------------------------
+problems with Arrays
+---------------------------
+1) we cannot modify array's once they are created.
+2) once declared, we can only insert that declared type of values to array indexes.. 
+
+
+
+
+Char [] charArray={'a','b,'c'}
+Char [] charArray=new char[10]
+
+charArray[0] -----> a
+charArray[1] -----> b
+
+charArray[1]='i';
+
+
+
+Task 23 :- Base class and DerivedClass object refferences method calling consequences...
+------------------------------------------------------------------------------------------------------
+
+
+BaseClass
+{
+
+int a;
+
+p v m1();
+
+
+}
+
+
+DerivedClass  extends BaseClass
+{
+int b;
+
+p v m2();
+
+}
+
+
+Base baseClassObject =new Base();    // base class object is assigned base class reference  ---> valid. you will be able to call only base class methods.
+
+Base baseClassObject = new DerivedClassObject();    // base class object is assigned derived class refference...  ----> valid.. but you will be able to call only base class methods....
+
+
+DerivedClas derivedClassObject = new DerivedClassObject();    // derived class object is assigned derived class reference. ----> valid.. here you will be able to call both base can derived class methods.
+
+DerivedClassObject derivedClassObject = new Base();   // derive class object is assigned with base class reference. ----> invalid  . type casting resolves compilation errors, but will get runtime error.
+
+
+
+Collection
+=====================================================
+
+
+
+1D:- 
+
+char [] charArray = new char[10];
+char[][] charArray1 =new charArray1[3][3];
+
+
+
+charArray[1,2,3,4,5,6,7,8,9,10]
+
+
+ 			1 2 3
+charArray1= 4 5 6
+		    7 8 9
+
+
+
+
+1D collection :-   list  and set 
+
+
+list:-   [water bottle, cooker ,tv, water bottle.] 
+set :- {water bottle, cooker,tv}
+stack :-  push and pop ---> first come last out..   
+Queue :-  first come last out.
+
+
+
+
+
+Task :- 24 LinkedList demo
+=========================================================
+
+package onedcollection;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class LinkedListDemo {
+
+	public static void main(String[] args) {
+	
+		LinkedList ll= new LinkedList();
+		
+		ll.add(10);
+		ll.add("Suraj");
+		ll.add(411057);
+		ll.add("pune");
+		
+		System.out.println(ll.getFirst());
+		System.out.println(ll.getLast());
+		
+		System.out.println(ll.get(3));
+		
+		ll.addFirst("java");
+		ll.addLast("python");
+
+		System.out.println(ll);	
+		
+	}
+}
+
+
+
+Task :- 25 ArrayList demo
+=========================================================
+package onedcollection;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class ArrayListDemo {
+
+	
+	public static void main(String args[])
+	{
+			
+		ArrayList al =  new ArrayList();
+	
+		List l = new LinkedList();	 // for demonstration.
+			
+		al.add(10);
+		al.add("Suraj");
+		al.add(411057);
+		al.add("pune");
+		
+		System.out.println("ArrayList elements are "+ al);
+		
+		al.add(1,"Dist Pune");
+		
+		System.out.println("ArrayList elements are "+ al);
+		
+		ArrayList al1= (ArrayList) al.clone();
+		
+		System.out.println("AL1 "+al1);
+		
+		al1.clear();
+		
+		System.out.println("AL1 after clear "+al1);
+		System.out.println("AL after clear "+al);
+		
+		System.out.println("ArrayList contains element 'Suraj' or not :- "+al.contains("suraj") );
+		
+		al.add(null);
+		al.add(null);
+		
+		System.out.println("AL after clear "+al);
+		
+		
+		
+		Iterator itr= al.iterator();
+		
+		for(int i=0; i<al.size(); i++)
+		{
+				if(itr.hasNext())
+				{
+			
+					System.out.println(itr.next());  
+				
+				}
+		}
+		
+		ListIterator li=	al.listIterator();
+		Iterator itr1= al.iterator();
+	
+	}
+	
+}
+
 
 
 
