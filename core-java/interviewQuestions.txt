@@ -68,6 +68,8 @@ List list = Collections.synchronizedList(new ArrayList(...));
 Q) what is difference between Iterable and Iterator ?
 Q) what is difference bwtween Iterator and ListIterator ?
 
+Q) when you will get concurrent modification exception ?
+
 
 
 

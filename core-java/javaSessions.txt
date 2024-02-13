@@ -1561,12 +1561,150 @@ public class ArrayListDemo {
 
 
 
+Task :- 26 TreeSet demo
+=========================================================
+package onedcollection;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+
+
+public class TreeSetDemo {
+
+	public static void main(String[] args) {
+		
+		
+		TreeSet ts=new TreeSet();
+		//Set s= new TreeSet();
+		//s =  new HashSet();
+		
+		System.out.println("treeset elements are "+ts);
+		
+		ts.add(3);
+		ts.add(1);
+		ts.add(4);
+		ts.add(1);
+		ts.add(2);
+		
+		System.out.println("treeset elements are "+ts);
+
+		Iterator itr = ts.iterator();
+		
+		while(itr.hasNext())
+		{
+				System.out.println(itr.next());
+		}
+		
+	}
+
+}
+
+
+
+Task :- 27 HashSet demo
+=========================================================
+package onedcollection;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class HashSetDemo {
+
+	public static void main(String[] args) {
+		
+		
+		
+		//HashSet hs =new HashSet();
+		
+		Set hs = new HashSet();
+	
+		/*	
+		//hs.add(10);
+		hs.add("Suraj");
+		hs.add(411057);
+		hs.add("pune");
+		hs.add(null);
+		*/
+		hs.add(4);
+		hs.add(1);
+		hs.add(2);
+		hs.add(3);
+		hs.add(4);
+		
+		System.out.println(hs.toString());
+		//System.out.println(hs); // same as calling toString method.
+		
+		// hashSet doesen't allow duplicate elements.
+		
+		//hs.add(10);		
+		//hs.add(null);
+		
+		Iterator itr=hs.iterator();
+		
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+		
+		
+		
+	}
+
+}
 
 
 
 
+Task :- 28 ConcurrentModificationExceptionDemo
+=========================================================
 
+package onedcollection;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class ConcurrentModificationExceptionDemo {
+
+	public static void main(String[] args) {
+		
+		
+		List al = new ArrayList();
+		
+		al.add(10);
+		al.add("Suraj");
+		al.add(411057);
+		al.add("pune");
+		
+		System.out.println("ArrayList elements are "+ al);
+		
+		al.add(1,"Dist Pune");
+		
+		System.out.println("ArrayList elements are "+ al);
+		
+		
+		Iterator itr= al.iterator();
+		
+		al.remove(2);
+		
+		while (itr.hasNext()) {
+
+				System.out.println("next element --> "+itr.next());
+				
+				itr.remove();
+				System.out.println("all elements are -------------->"+al);
+				//System.out.println("next element --->"+itr.next());						
+				
+		}
+
+		
+	}
+
+}
 
 
 
