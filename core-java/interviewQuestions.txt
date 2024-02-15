@@ -70,7 +70,7 @@ Q) what is difference bwtween Iterator and ListIterator ?
 
 Q) when you will get concurrent modification exception ?
 
-
+Q) what is LinkedHashMap ?  or have you used Linked HashMap ? or what is use of LinkedHashMap ?
 
 
 
