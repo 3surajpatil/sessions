@@ -45,7 +45,7 @@ public class HashMapDemo {
 		}
 		
 		
-		System.out.println("=========================snd method to retrive lements =================");
+		System.out.println("========================= method to retrive elements =================");
 		
 		Set entrySet=hm.entrySet();
 		
