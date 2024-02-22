@@ -72,6 +72,9 @@ Q) when you will get concurrent modification exception ?
 
 Q) what is LinkedHashMap ?  or have you used Linked HashMap ? or what is use of LinkedHashMap ?
 
+Q) [1,5,3,6,2,8,4,9,7]   :- SORT this int array. without using inbuilt methods..   sort this integer array using BubbleSort method.  
+
+
 
 
 
