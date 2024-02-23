@@ -1,6 +1,6 @@
 package student;
 
-public class Student {
+public class Student implements Comparable<Student>{
 
 
 	int rollNo;    
@@ -71,25 +71,41 @@ public class Student {
 		return "Student [rollNo=" + rollNo + ", name=" + name + ", std=" + std + "]";
 	}
 	
-	
+
 	public boolean equals(Student inputStudent)
 	{
 		boolean isEqual=false;
 		
-		if(this.rollNo == inputStudent.rollNo)
+		if(this.rollNo==inputStudent.rollNo)
 		{
 			isEqual=true;
+		}	
+		
+		return isEqual;
+	}
+
+
+	@Override
+	public int compareTo(Student inputStudent) {
+	
+	int returnValue=0;
+		
+		if(this.rollNo == inputStudent.rollNo)
+		{
+			returnValue=0;
 		}
 		else if(this.rollNo > inputStudent.rollNo)
 		{
-			return false;
+			returnValue=-1;
 		}
 		else if(this.rollNo < inputStudent.rollNo)
 		{
-			return false;
+			returnValue=1;
 		}
 		
-		return isEqual;
+		return returnValue;
+		
+		
 	}
 	
 
