@@ -22,7 +22,7 @@ public class NewTest {
 		System.out.println(s2.compareTo(s1));
 		
 		ArrayList al = new ArrayList();
-		
+
 		al.add(s1);
 		al.add(s5);
 		al.add(s2);

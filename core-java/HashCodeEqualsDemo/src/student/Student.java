@@ -96,11 +96,11 @@ public class Student implements Comparable<Student>{
 		}
 		else if(this.rollNo > inputStudent.rollNo)
 		{
-			returnValue=-1;
+			returnValue=1;
 		}
 		else if(this.rollNo < inputStudent.rollNo)
 		{
-			returnValue=1;
+			returnValue=-1;
 		}
 		
 		return returnValue;
