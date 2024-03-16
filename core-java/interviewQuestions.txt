@@ -1,7 +1,3 @@
-
-
-
-
 Q) what is JVM
 
 Q) What is Class ?
@@ -82,8 +78,46 @@ StringBuilder --> non thread safe.
 
 
 
+Mock Interview Questions
+------------------------------
 
+Common Questions
+-------------------
 
+1) tell me about yourself.
+2) how much you would rate yourself in java out of 10  ---> 6-> low comfidence 7--> average -->9 good 10 --> overconfident
+3) What are oops concepts.
+4) features of java  or java 8.
+5) why java is roboust ?
+6) write a program for bubble sort.
+
+set 1
+--------
+7) what is static polymorphism and dynamic polymorphism.
+8) difference between HashMap and HashTable.
+9) how exception works. / Can you explain Exception work flow.
+10) Which String class you will use when you want to do multiple string manipulation.
+11) how will you create a thread ?
+12) what is base class of all classes in java. does java support multiple inheritance ? 
+    if class extending form other class how Object class becomes base class since java doesent support multiple inheritance?
+13) how do you call static variables and static methods. 	
+14) what is exception propagation?
+15) what is Thread ? explain thread life cycle and methods of thread.
+16) what is synchronization.
+17) what is use of Volatile variable ?
+
+set 2
+--------
+7) what are checked Exceptions and Checked Exceptions.
+8) what is use of static block and static methods.
+9) difference between Comparable and Comparator.
+10) what is use of finally block when we already have try and catch blocks.?
+11) what are methods of Objects class.
+12) what is use of static variable and static methods. what are final variables ?
+13) difference between HashSet and TreeSet.
+14) what collection classes do you know. 
+15) how to insert element in hashmap and retrive it ?
+16) what is serialization.
 
 
 
